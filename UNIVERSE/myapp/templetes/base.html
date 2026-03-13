@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Unversity Hub{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}?v=20260313-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav">
+                <div class="brand">
+                    <div class="brand-title">University Hub</div>
+                    <div class="brand-subtitle">Portal</div>
+                </div>
+
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="/students/">Students</a>
+                    <a href="/courses/">Courses</a>
+                    <a href="/departments/">Departments</a>
+                    <a href="/admin/">Admin</a>
+                </nav>
+
+                <div class="nav-actions">
+                    {% if user.is_authenticated %}
+                        <span class="muted">Signed in as <strong>{{ user.username }}</strong></span>
+                        <a class="btn btn-ghost" href="/admin/logout/">Logout</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="/register-student">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        <main class="container content">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2026 University Hub Systems</p>
+            </div>
+        </footer>
+    </body>
+</html>

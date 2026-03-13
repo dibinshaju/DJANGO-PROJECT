@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Department page {% endblock %}
+
+{% block content %}
+
+<h1>{{ page_title }}</h1>
+
+<ul>
+{% for department in departments %}
+    <li>
+        <strong>{{ department.name }}</strong><br>
+        Head: {{ department.head_of_dept }}<br>
+        Description: {{ department.description }}
+    </li>
+{% empty %}
+    <li>No departments available</li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
