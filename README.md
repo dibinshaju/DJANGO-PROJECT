@@ -1,29 +1,31 @@
-# Student Management Portal (Django)
+# Django Student Management Portal
 
-A simple **Student Management Portal** built using **Django**.
-This project manages **Departments, Courses, and Students** and allows users to view and create student records through a web interface.
+A **Student Management Portal** built using **Django** that allows users to manage **Departments, Courses, and Students**.
+The project demonstrates Django fundamentals such as **models, views, templates, forms, and authentication**.
 
 ---
 
 ## Features
 
 * View list of students
-* View available courses
 * View departments
-* Create new student records
+* View available courses
+* Add new students using forms
 * User registration system
-* Django admin panel for managing data
-* HTML templates with base layout
+* Django Admin panel for database management
+* Template rendering with Django views
+* Basic HTML layout with reusable templates
 
 ---
 
 ## Technologies Used
 
-* Python
+* Python 3
 * Django
 * HTML
 * CSS
 * SQLite (default Django database)
+* Git & GitHub
 
 ---
 
@@ -42,104 +44,25 @@ UNIVERSE/
 │   └── wsgi.py
 │
 ├── myapp/
+│   ├── admin.py
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
 │   ├── forms.py
-│   ├── admin.py
 │   ├── migrations/
 │   └── templates/
-│       └── academics/
-│           ├── student_list.html
-│           ├── course_list.html
-│           ├── dept_list.html
-│           └── student_form.html
+│       ├── academics/
+│       │   ├── student_list.html
+│       │   ├── course_list.html
+│       │   ├── dept_list.html
+│       │   └── student_form.html
+│       └── registration/
+│           └── register.html
 ```
 
 ---
 
-## Installation
-
-1. Clone the repository
-
-```
-git clone https://github.com/yourusername/student-portal.git
-```
-
-2. Navigate to project directory
-
-```
-cd student-portal
-```
-
-3. Create virtual environment
-
-```
-python -m venv env
-```
-
-4. Activate environment
-
-Linux / macOS
-
-```
-source env/bin/activate
-```
-
-Windows
-
-```
-env\Scripts\activate
-```
-
-5. Install dependencies
-
-```
-pip install django
-```
-
----
-
-## Database Setup
-
-Run migrations to create database tables.
-
-```
-python manage.py makemigrations
-python manage.py migrate
-```
-
----
-
-## Create Admin User
-
-```
-python manage.py createsuperuser
-```
-
----
-
-## Run the Server
-
-```
-python manage.py runserver
-```
-
-Open the project in your browser:
-
-```
-http://127.0.0.1:8000/
-```
-
-Admin panel:
-
-```
-http://127.0.0.1:8000/admin
-```
-
----
-
-## Models
+## Database Models
 
 ### Department
 
@@ -165,6 +88,87 @@ http://127.0.0.1:8000/admin
 
 ---
 
+## Installation
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/dibinshaju/DJANGO-PROJECT.git
+```
+
+### 2. Navigate to the project folder
+
+```
+cd DJANGO-PROJECT
+```
+
+### 3. Create a virtual environment
+
+```
+python -m venv env
+```
+
+### 4. Activate the virtual environment
+
+Linux / macOS
+
+```
+source env/bin/activate
+```
+
+Windows
+
+```
+env\Scripts\activate
+```
+
+### 5. Install Django
+
+```
+pip install django
+```
+
+---
+
+## Database Setup
+
+Run migrations to create the database:
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+---
+
+## Create Admin User
+
+```
+python manage.py createsuperuser
+```
+
+---
+
+## Run the Server
+
+```
+python manage.py runserver
+```
+
+Open in browser:
+
+```
+http://127.0.0.1:8000/
+```
+
+Admin panel:
+
+```
+http://127.0.0.1:8000/admin
+```
+
+---
+
 ## Future Improvements
 
 * Student login system
@@ -172,9 +176,10 @@ http://127.0.0.1:8000/admin
 * Dashboard UI
 * Search and filtering
 * REST API with Django REST Framework
+* Better frontend styling
 
 ---
 
 ## Author
 
-Student Portal Project built for learning Django.
+Developed as a learning project using Django.
