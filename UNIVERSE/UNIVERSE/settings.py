@@ -51,6 +51,12 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = 'UNIVERSE.urls'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Login required settings (as in your screenshot)
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/courses/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
